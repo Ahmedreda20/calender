@@ -1,0 +1,175 @@
+body,
+html {
+  font-family: var(--c-font);
+}
+.form__group {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: calc(var(--c-main-size) - 6px);
+  position: relative;
+}
+
+.f_test {
+  width: 100%;
+  position: relative;
+}
+#calender__date {
+  font-family: var(--c-font);
+  font-size: var(--c-main-size);
+  padding: var(--c-main-size);
+  border: 1px solid var(--c-border-color);
+  @include radius(6px);
+  margin-bottom: 10px;
+  width: 100%;
+  display: block;
+  padding-right: calc(var(--c-main-size) + 30px);
+}
+
+.flex__center {
+  justify-content: center;
+  align-items: center;
+}
+.flex__between {
+  justify-content: space-between;
+  align-items: center;
+}
+.calender {
+  &__flex {
+    display: flex;
+  }
+  &__grid {
+    display: grid;
+  }
+  &__days--content {
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  }
+  &__months--content,
+  &__years--content {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
+  &__active--box {
+    display: grid !important;
+  }
+  &__hidden--box {
+    display: none !important;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(var(--c-main-size) + 30px);
+    height: 100%;
+    cursor: pointer;
+    svg {
+      width: calc(var(--c-main-size) + 5px);
+    }
+  }
+  &__title--top {
+    text-align: center;
+    display: table;
+    margin: 10px auto;
+    font-weight: 700;
+    color: var(--c-text-color);
+  }
+  &__red--logo {
+    color: var(--c-red-color);
+  }
+  &__content--top {
+    text-align: center;
+    padding: calc(var(--c-main-size) - 6px);
+    font-weight: 500;
+    color: var(--c-text-color);
+  }
+  &__container {
+    width: 100%;
+    max-height: 0;
+    pointer-events: none;
+    visibility: hidden;
+    padding: calc(var(--c-main-size) - 6px);
+    padding-top: 0;
+    @include radius(calc(var(--c-main-size) - 6px));
+    background-color: var(--c-white-color);
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  &__active {
+    display: block;
+    max-height: 300px;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  &__content {
+    width: 100%;
+    height: auto;
+    margin: calc(var(--c-main-size) - 2px) 0;
+    gap: 6px;
+  }
+  &__header {
+    width: 100%;
+    height: auto;
+    padding: calc(var(--c-main-size) - 6px) calc(var(--c-main-size) - 10px);
+    margin-bottom: calc(var(--c-main-size));
+    border-bottom: 1px solid var(--c-lightGray);
+  }
+  &__title {
+    font-weight: 500;
+    color: var(--c-text-color);
+  }
+  &__btn--prev,
+  &__btn--next {
+    width: calc(var(--c-main-size) + 12px);
+    height: calc(var(--c-main-size) + 12px);
+    background: transparent;
+    @include radius(calc(var(--c-main-size) - 10px));
+    border: 1px solid var(--c-lightGray);
+    margin: 0 calc(var(--c-main-size) - 14px);
+    cursor: pointer;
+    svg {
+      fill: var(--c-gray-1);
+      width: calc(var(--c-main-size) + 6px);
+      // height: calc(var(--c-main-size) + 14px);
+    }
+  }
+  &__item {
+    // width: calc(var(--c-main-size) + 12px);
+    padding: calc(var(--c-main-size) - 12px);
+    background: transparent;
+    @include radius(calc(var(--c-main-size) - 10px));
+    border: 1px solid var(--c-lightGray);
+    cursor: pointer;
+    font-size: calc(var(--c-main-size) - 2px);
+    color: var(--c-gray-color);
+    font-weight: 500;
+    transition: 0.4s ease-in-out;
+    animation: slideRight 0.5s ease-in-out;
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(10%);
+        opacity: 1;
+      }
+      75% {
+        transform: translateX(-10%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    &[aria-checked="true"] {
+      background-color: var(--c-navy-color);
+      color: var(--c-white-color);
+      box-shadow: 0 0 0 2px var(--c--shadow-color);
+      border-color: var(--c-white-color);
+      font-weight: 400;
+    }
+  }
+  &__day--inactive {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

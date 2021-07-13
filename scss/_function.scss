@@ -1,0 +1,60 @@
+$browserSupport: (webkit moz ms o);
+@mixin transform($value) {
+  transform: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}transform: $value;
+  }
+}
+@mixin transition($value) {
+  transition: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}transition: $value;
+  }
+}
+@mixin radius($value) {
+  border-radius: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}border-radius: $value;
+  }
+}
+@mixin bgsize($value) {
+  background-size: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}background-size: $value;
+  }
+}
+@mixin bgstyle($value) {
+  background: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}background: $value;
+  }
+}
+@mixin animated($value) {
+  animation: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}animation: $value;
+  }
+}
+@mixin animatedProperty($name, $value) {
+  animation#{"-" + $name}: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}animation#{"-" + $name}: $value;
+  }
+}
+@mixin user($value) {
+  user-select: $value;
+  @each $item in $browserSupport {
+    #{"-" + $item + "-"}user-select: $value;
+  }
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: none;
+  @include user(none);
+}

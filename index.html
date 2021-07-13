@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/style/all.min.css" />
+    <title>calender</title>
+  </head>
+  <body>
+    <div class="form__group">
+      <h1 class="calender__title--top">
+        <span class="calender__red--logo">C</span>ale<span
+          class="calender__red--logo"
+          >n</span
+        >der
+      </h1>
+      <p class="calender__content--top">
+        Click on that icon on the right side of the next field to display the
+        Calender
+      </p>
+      <div class="f_test">
+        <input
+          type="text"
+          name="date"
+          id="calender__date"
+          placeholder="DD/MM/YY"
+          readonly
+        />
+        <span class="calender__icon calender__flex flex__center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
+          </svg>
+        </span>
+      </div>
+      <section class="calender__container">
+        <main class="calender__box">
+          <header class="calender__header calender__flex flex__between">
+            <h3 class="calender__title" id="calender__group--days">Days</h3>
+            <div class="calender__header--buttons calender__flex flex__between">
+              <button
+                class="calender__btn--prev calender__flex flex__center"
+                aria-label="previous button"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button
+                class="calender__btn--next calender__flex flex__center"
+                aria-label="next button"
+                type="button"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div
+            class="
+              calender__content calender__days--content calender__active--box
+            "
+            id="calender__group--1"
+            role="radiogroup"
+            aria-labelledby="calender__group--days"
+            data-type="days"
+          >
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              1
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              2
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              3
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              4
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              5
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              6
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              7
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              8
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              9
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              10
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              11
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              12
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              13
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              14
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              15
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              16
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              17
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              18
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              19
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              20
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              21
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              22
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              23
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              24
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              25
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              26
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              27
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              28
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              29
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              30
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              31
+            </div>
+          </div>
+          <div
+            class="
+              calender__content calender__months--content calender__hidden--box
+            "
+            id="calender__group--2"
+            role="radiogroup"
+            aria-labelledby="calender__group--months"
+            data-type="months"
+          >
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Jan
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Feb
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Mar
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Apr
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              May
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Jun
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Jul
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Aug
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Sep
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Oct
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Nov
+            </div>
+            <div
+              class="calender__item calender__flex flex__center"
+              tabindex="-1"
+              rol="radio"
+              aria-checked="false"
+            >
+              Dec
+            </div>
+          </div>
+          <div
+            class="
+              calender__content calender__years--content calender__hidden--box
+            "
+            id="calender__group--3"
+            role="radiogroup"
+            aria-labelledby="calender__group--years"
+            data-type="years"
+          ></div>
+        </main>
+      </section>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
