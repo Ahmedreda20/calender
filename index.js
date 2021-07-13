@@ -126,11 +126,16 @@ function appendCheckedItemInsideTheirInput(item) {
       return;
   }
 
-  inputDate.value = `${
-    localStorage.getItem("day") ? localStorage.getItem("day") : "DD"
-  }/${localStorage.getItem("month") ? localStorage.getItem("month") : "MM"}/${
-    localStorage.getItem("year") ? localStorage.getItem("year") : "YY"
-  }`;
+  handleInputValue(
+    localStorage.getItem("day"),
+    localStorage.getItem("month"),
+    localStorage.getItem("year")
+  );
+}
+
+function handleInputValue(d, m, y) {
+  inputDate.value = `${d ? d : "DD"}/${m ? m : "MM"}/${y ? y : "YY"}`;
+  console.log(d, m, y);
 }
 
 const btnIcon = document.querySelector(".calender__icon");
@@ -139,3 +144,65 @@ btnIcon.onclick = () => {
     .querySelector(".calender__container")
     .classList.toggle("calender__active");
 };
+
+const currentDateBtn = document.querySelector(".calender__footer--today");
+
+currentDateBtn.addEventListener("click", handleWithCurrentDate);
+
+function handleWithCurrentDate() {
+  let currentDate = new Date(),
+    currentDay = currentDate.getDate(),
+    currentMonth = currentDate.getMonth(),
+    currentYear = currentDate.getFullYear();
+  let currentMonths = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  handleInputValue(
+    currentDay.toString(),
+    currentMonths[currentMonth - 1].toString(),
+    currentYear.toString()
+  );
+  handleWithCurrentElementsAppended(currentDay, currentMonth, currentYear);
+}
+
+function handleWithCurrentElementsAppended(day, month, year) {
+  let days = document.querySelectorAll(
+      ".calender__days--content .calender__item"
+    ),
+    months = document.querySelectorAll(
+      ".calender__months--content .calender__item"
+    ),
+    years = document.querySelectorAll(
+      ".calender__years--content .calender__item"
+    );
+  days[day - 1].setAttribute("aria-checked", "true");
+  days[day - 1].setAttribute("tabindex", "0");
+  months[month].setAttribute("aria-checked", "true");
+  months[month].setAttribute("tabindex", "0");
+
+  for (let yr = 0; yr < years.length; yr++) {
+    const yrs = years[yr];
+    if (parseInt(yrs.innerHTML) == year) {
+      yrs.setAttribute("aria-checked", "true");
+      yrs.setAttribute("tabindex", "0");
+
+      handleWithLocalStorage(day, month + 1, year);
+    }
+  }
+}
+
+function handleWithLocalStorage(da, mo, yr) {
+  localStorage.setItem("day", da ? da : "DD");
+  localStorage.setItem("month", mo ? mo : "MM");
+  localStorage.setItem("year", yr ? yr : "YY");
+}
