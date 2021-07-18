@@ -4,7 +4,7 @@ var title = document.querySelector(".calender__title");
 
 const inputDate = document.querySelector("#calender__date");
 
-const name = ["Days", "Months", "Years"];
+const name = ["Months", "Days", "Years"];
 
 window.addEventListener("load", checkCurrentCalenderElements());
 
@@ -131,11 +131,15 @@ function appendCheckedItemInsideTheirInput(item) {
     localStorage.getItem("month"),
     localStorage.getItem("year")
   );
+  handleDays(
+    localStorage.getItem("day"),
+    localStorage.getItem("month"),
+    localStorage.getItem("year")
+  );
 }
 
 function handleInputValue(d, m, y) {
   inputDate.value = `${d ? d : "DD"}/${m ? m : "MM"}/${y ? y : "YY"}`;
-  console.log(d, m, y);
 }
 
 const btnIcon = document.querySelector(".calender__icon");
@@ -205,4 +209,25 @@ function handleWithLocalStorage(da, mo, yr) {
   localStorage.setItem("day", da ? da : "DD");
   localStorage.setItem("month", mo ? mo : "MM");
   localStorage.setItem("year", yr ? yr : "YY");
+}
+
+function handleDays(day, mon, year) {
+  var dts = new Date(`${mon} , ${year}`),
+    monthd = dts.getMonth() + 1,
+    yeard = dts.getFullYear(),
+    daysInMonth = new Date(yeard, monthd, 0).getDate();
+
+  let days = document.querySelectorAll(
+    ".calender__days--content .calender__item"
+  );
+  days.forEach((dayItem) => {
+    if (parseInt(day) <= daysInMonth) {
+      dayItem.classList.add("calender__day--inactive");
+      parseInt(dayItem.innerHTML) <= daysInMonth
+        ? dayItem.classList.remove("calender__day--inactive")
+        : null;
+    } else {
+      dayItem.classList.remove("calender__day--inactive");
+    }
+  });
 }
